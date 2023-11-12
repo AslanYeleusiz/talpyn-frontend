@@ -1,0 +1,268 @@
+
+
+
+@media (max-width:1199px) {
+    .login-elem-26 {
+        padding: 0px 0px 0px 0px;
+        height: auto
+    }
+
+    .login-elem-24 {
+        font-size: 38px;
+        line-height: 48px
+    }
+
+    .login-elem-19 {
+        min-width: 18px;
+        min-height: 18px
+    }
+}
+@media (max-width:1199px) {
+    .home-elem-164:hover {
+        background-color: #00000019
+    }
+
+    .home-elem-162 {
+        padding: 0px 0px 0px 0px
+    }
+
+    .home-elem-165 {
+        width: fit-content
+    }
+
+    .home-elem-166 {
+        width: 100%
+    }
+
+    .home-elem-161 {
+        padding: 32px 16px 32px 16px;
+        flex-direction: column;
+        align-items: center;
+        background-color: #c5c3c3ff;
+        display: none;
+        width: 100%;
+        position: fixed;
+        min-height: 100vh
+    }
+
+    .home-elem-171 {
+        align-items: flex-end;
+        display: flex;
+        width: 100%
+    }
+
+    .home-elem-157 {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        display: flex
+    }
+
+    .home-elem-158 {
+        justify-content: center;
+        width: 100%;
+        display: flex
+    }
+
+    .home-elem-159 {
+        justify-content: center;
+        width: 100%;
+        display: flex
+    }
+
+    .home-elem-160 {
+        justify-content: center;
+        width: 100%;
+        display: flex
+    }
+
+    .home-elem-168 {
+        width: fit-content;
+        display: none
+    }
+
+    .home-elem-164 {
+        display: block;
+        width: 100px
+    }
+
+    .home-elem-122 {
+        justify-content: center
+    }
+
+    .home-elem-197 {
+        flex-direction: column;
+        align-items: center
+    }
+
+    .home-elem-109 {
+        justify-content: center
+    }
+
+    .home-elem-107 {
+        justify-content: center
+    }
+
+    .home-elem-3 {
+        max-width: 600px
+    }
+
+    .home-elem-4 {
+        max-width: 600px;
+        min-height: 300px
+    }
+
+    .home-elem-74 {
+        padding: 60px 16px 50px 16px
+    }
+
+    .home-elem-63 {
+        padding: 50px 0px 50px 0px;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        row-gap: 50px
+    }
+
+    .home-elem-62 {
+        padding: 0px 0px 0px 0px
+    }
+
+    .home-elem-75 {
+        display: none
+    }
+
+    .home-elem-68 {
+        padding: 50px 0px 50px 0px;
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+        align-items: center;
+        row-gap: 50px
+    }
+
+    .home-elem-67 {
+        padding: 0px 0px 0px 0px
+    }
+
+    .home-elem-76 {
+        display: none
+    }
+
+    .home-elem-73 {
+        padding: 50px 0px 50px 0px;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        row-gap: 50px
+    }
+
+    .home-elem-72 {
+        padding: 0px 0px 0px 0px
+    }
+
+    .home-elem-77 {
+        display: none
+    }
+
+    .home-elem-103 {
+        padding: 50px 16px 50px 16px
+    }
+
+    .home-elem-102 {
+        flex-direction: column;
+        flex-wrap: wrap
+    }
+
+    .home-elem-81 {
+        width: auto;
+        height: auto
+    }
+
+    .home-elem-82 {
+        width: auto;
+        height: auto
+    }
+
+    .home-elem-83 {
+        width: auto;
+        height: auto
+    }
+
+    .home-elem-84 {
+        width: auto;
+        height: auto
+    }
+
+    .home-elem-80 {
+        width: auto;
+        height: auto
+    }
+
+    .home-elem-101 {
+        flex-wrap: wrap;
+        row-gap: 20px
+    }
+
+    .home-elem-92 {
+        width: auto;
+        height: auto
+    }
+
+    .home-elem-96 {
+        width: auto;
+        height: auto
+    }
+
+    .home-elem-95 {
+        width: auto;
+        height: auto
+    }
+
+    .home-elem-94 {
+        width: auto;
+        height: auto
+    }
+
+    .home-elem-93 {
+        width: auto;
+        height: auto
+    }
+
+    .home-elem-6 {
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 50px
+    }
+
+    .home-elem-28 {
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: flex-start
+    }
+
+    .home-elem-30 {
+        font-size: 60px;
+        line-height: 70px;
+        text-align: center;
+        max-width: 400px
+    }
+
+    .home-elem-32 {
+        align-items: center
+    }
+
+    .home-elem-33 {
+        text-align: center;
+        max-width: 400px
+    }
+
+    .home-elem-35 {
+        flex-wrap: wrap;
+        row-gap: 50px
+    }
+
+    .home-elem-47 {
+        flex-wrap: wrap;
+        justify-content: center
+    }
+}

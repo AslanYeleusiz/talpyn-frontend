@@ -1,0 +1,19 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="40.5" cy="74" rx="17.5" ry="3" fill="#E8E5E4"/>
+<path d="M19 6C19 3.79086 20.7909 2 23 2H57C59.2091 2 61 3.79086 61 6V53C61 55.2091 59.2091 57 57 57H23C20.7909 57 19 55.2091 19 53V6Z" fill="url(#paint0_linear_89_8982)"/>
+<rect x="24" y="7" width="32" height="13" rx="2" fill="#FFC04A"/>
+<rect x="24" y="26" width="8" height="5" rx="2" fill="white"/>
+<rect x="36" y="26" width="8" height="5" rx="2" fill="white"/>
+<rect x="48" y="26" width="8" height="5" rx="2" fill="white"/>
+<rect x="24" y="35" width="8" height="5" rx="2" fill="white"/>
+<rect x="36" y="35" width="8" height="5" rx="2" fill="white"/>
+<rect x="48" y="35" width="8" height="14" rx="2" fill="white"/>
+<rect x="24" y="44" width="8" height="5" rx="2" fill="white"/>
+<rect x="36" y="44" width="8" height="5" rx="2" fill="white"/>
+<defs>
+<linearGradient id="paint0_linear_89_8982" x1="40" y1="2" x2="40" y2="57" gradientUnits="userSpaceOnUse">
+<stop offset="0.425563" stop-color="#3481F9"/>
+<stop offset="1" stop-color="#35B3FE"/>
+</linearGradient>
+</defs>
+</svg>

@@ -1,0 +1,83 @@
+/*Default Preference*/
+.d-f {
+    display: flex;
+}
+
+.j-c {
+    justify-content: center;
+}
+
+.a-c {
+    align-items: center;
+}
+
+.aj-c {
+    align-items: center;
+    justify-content: center;
+}
+
+.j-b {
+    justify-content: space-between;
+}
+
+.t-c {
+    text-align: center;
+}
+
+.t-l {
+    text-align: left;
+}
+
+.cst-ct {
+    width: 100%;
+    max-width: 1240px;
+    position: relative;
+    margin: 0 auto;
+}
+.mt-30{
+    margin-top: 30px;
+}
+.relative{
+    position: relative;
+}
+
+a:hover, a:active{
+    text-decoration: none;
+}
+
+@for $i from 2 through 4 {
+  .grid-#{$i} {
+    display: grid;
+    grid-template-columns: repeat(#{$i}, 1fr);
+  }
+}
+@for $i from 1 through 5 {
+  .gap-#{$i}0 {
+    gap: #{$i}0px;
+  }
+}
+@for $i from 1 through 5 {
+  .mt-#{$i}0 {
+    margin-top: #{$i}0px;
+  }
+}
+
+.spinner-border {
+    width: 1rem;
+    height: 1rem;
+}
+.dropdown-item {
+    padding: 15px 30px;
+    width: 288px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dropdown-item .notification {
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    background: #03B113;
+    color: #fff;
+    font-weight: 800;
+}
