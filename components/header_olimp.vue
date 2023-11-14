@@ -1,6 +1,6 @@
 <template>
-    <header>
-        <div class="otstup"></div>
+        <div>
+            <div class="otstup"></div>
         <div class="main_header">
             <div class="cst-ct d-flex a-c j-b drop">
                 <div class="d-flex overflow">
@@ -25,7 +25,7 @@
             </div>
 
         </div>
-    </header>
+        </div>
 </template>
 
 

@@ -1,22 +1,20 @@
 <template>
-    <header>
-        <div class="main_header" :class="{pd:pd}">
-            <div class="cst-ct d-flex a-c j-b">
-                <div class="d-flex a-c">
-                    <gotoBackBtn @click.native="gotoBack" />
-                    <div class="kroshki d-f a-c gap-10">
-                        <template v-for='(head, index) in header'>
-                            <span v-if='index>0'> / </span>
-                            <span v-if='head.link'>
-                                <NuxtLink :to="head.link">{{head.name}}</NuxtLink>
-                            </span>
-                            <span v-else>{{head.name}}</span>
-                        </template>
-                    </div>
+    <div class="main_header" :class="{pd:pd}">
+        <div class="cst-ct d-flex a-c j-b">
+            <div class="d-flex a-c">
+                <gotoBackBtn @click.native="gotoBack" />
+                <div class="kroshki d-f a-c gap-10">
+                    <template v-for='(head, index) in header'>
+                        <span v-if='index>0'> / </span>
+                        <span v-if='head.link'>
+                            <NuxtLink :to="head.link">{{head.name}}</NuxtLink>
+                        </span>
+                        <span v-else>{{head.name}}</span>
+                    </template>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
 </template>
 
 
@@ -53,13 +51,16 @@
 
     .main_header {
         background: #ffffff;
+
         .kroshki {
             margin-left: 15px;
             line-height: 20px;
             color: #888888;
+
             a {
                 color: #1E63E9;
-                &:hover{
+
+                &:hover {
                     text-decoration: underline;
                 }
             }
