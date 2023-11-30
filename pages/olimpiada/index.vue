@@ -3,24 +3,6 @@
         <videoPopup :isOpen="videoOpen" :youtube="youtubeLink" @closePopup="videoOpen=0" />
         <div class="olimp">
             <div class="body">
-                <div class="cat-overflow">
-                    <div class="cst-ct">
-                        <div class="cat-category">
-                            <button class="btn cat-item" :class="{active: cat_category==1}" @click="changeCatType(1)">
-                                Ұстаздарға
-                            </button>
-                            <button class="btn cat-item" :class="{active: cat_category==4}" @click="changeCatType(4)">
-                                Тәрбиешілерге
-                            </button>
-                            <button class="btn cat-item" :class="{active: cat_category==3}" @click="changeCatType(3)">
-                                Оқушыларға
-                            </button>
-                            <button class="btn cat-item" :class="{active: cat_category==2}" @click="changeCatType(2)">
-                                Студенттерге
-                            </button>
-                        </div>
-                    </div>
-                </div>
                 <div class="list">
                     <div class="cst-ct">
                         <div class="wrapper">
@@ -58,7 +40,7 @@
                     </div>
                 </div>
             </div>
-            <faqs />
+<!--            <faqs />-->
         </div>
     </div>
 </template>

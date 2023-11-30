@@ -7,7 +7,7 @@
                     <exitBtn @click.native="$emit('close')" />
                 </div>
                 <div v-if="active==1" class="body">
-                    <div class="green">Олимпиада нәтижесі</div>
+                    <div class="green">Есептің нәтижесі</div>
 
                     <div class="list">
                         <div class="list_item">
@@ -16,15 +16,7 @@
                         </div>
                         <div class="list_item">
                             <img src="~assets/images/turnir_Bookmark.svg" alt="">
-                            <span class="light">Олимпиада атауы: </span><span>{{o_katysushy.o_tury.o_tury}}</span>
-                        </div>
-                        <div class="list_item">
-                            <img src="~assets/images/turnir_flag.svg" alt="">
-                            <span class="light">Деңгейі: </span><span>{{oblys(o_katysushy.o_bagyt.type)}}</span>
-                        </div>
-                        <div class="list_item">
-                            <img src="~assets/images/turnir_user-octagon.svg" alt="">
-                            <span class="light">Қатысушы: </span><span>{{katysushy(o_katysushy.o_katysushy_idd)}}</span>
+                            <span class="light">Есептің атауы: </span><span>{{o_katysushy.o_tury.o_tury}}</span>
                         </div>
                         <div class="list_item">
                             <img src="~assets/images/turnir_Star.svg" alt="">

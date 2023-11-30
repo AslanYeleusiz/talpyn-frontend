@@ -42,6 +42,9 @@
                                 <button @click="nextTo" class="btn paginate-btn right"></button>
                             </div>
                         </div>
+                        <div class="framer">
+                            <iframe class="w-100" src="https://www.programiz.com/python-programming/online-compiler/" frameborder="0"></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -465,6 +468,13 @@
                 &.right {
                     background-image: url(~/assets/images/arrow-right-white.svg);
                 }
+            }
+            .framer {
+                overflow: hidden;
+            }
+            iframe {
+                transform: translate(-54px, -139px);
+                height: 600px;
             }
 
 

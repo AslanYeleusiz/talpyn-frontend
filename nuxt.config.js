@@ -28,7 +28,7 @@ export default {
                 rel: 'icon',
                 type: 'image/x-icon',
                 href: '/favicon.ico'
-            }
+            },
     ]
     },
 
@@ -38,7 +38,6 @@ export default {
         '@/assets/css/responsive/main.scss',
         '@/assets/main.scss',
         '@/assets/css/responsive/responsive-mobile.css',
-        '@/assets/css/responsive/responsive-tablet.css',
   ],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

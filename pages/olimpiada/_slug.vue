@@ -8,7 +8,7 @@
             <div class="cst-ct">
                <div v-if="startDate" class="warning">
                     <Lottie :width="64" :height="64" :options="notFoundOption" v-on:animCreated="handleAnimation" />
-                    <div><b>Ескерту:</b> Бұл олимпиада {{startDate}}-{{endDate}} аралығында өткен. Бұл бетте тек нәтижелері сақталған. Қазіргі болып жатқан олимпиадаларды көргіңіз келсе олимпиада бетіне өтіңіз!</div>
+                    <div><b>Ескерту:</b> Бұл есеп {{startDate}}-{{endDate}} аралығында өткен. Бұл бетте тек нәтижелері сақталған. Қазіргі болып жатқан Есептер ды көргіңіз келсе есеп бетіне өтіңіз!</div>
                 </div>
                 <div v-if="!bagyt.o_bagyty" class="header">
                     <b-skeleton width="75%" height="25px"></b-skeleton>
@@ -77,8 +77,8 @@
                                         </div>
                                         <div class="cst_size_btn">
                                             <cstBtn v-if="o_user.loading" loading=1 radian=1 />
-                                            <cstBtn v-else-if="o_user.success" @click.native="startTest(index)" text="Тест тапсыру" radian=1 />
-                                            <cstBtn v-else @click.native="olimpTolem(index)" text="Тест дайындау" radian=1 />
+                                            <cstBtn v-else-if="o_user.success" @click.native="startTest(index)" text="Есептерге өту" radian=1 />
+                                            <cstBtn v-else @click.native="olimpTolem(index)" text="Есептерді дайындау" radian=1 />
                                         </div>
                                     </div>
                                     <div class="numeric">
@@ -152,15 +152,6 @@
         head() {
             return {
                 title: this.bagyt.o_bagyty,
-                meta: [{
-                    hid: 'description',
-                    name: 'description',
-                    content: 'Олимпиадаларға барлық ұстаздар, тәрбиешілер, білім бөлімдерінің мамандары және мектепалды даярлық, балабақша, мектеп оқушылары, гимназия, лицей оқушылары, студенттер барлық қолданушылар қатыса алады.'
-                }, {
-                    hid: 'keywords',
-                    name: 'keywords',
-                    content: 'онлайн олимпиадалар, зияткерлік олимпиада, қазақстандық интернет олимпиадалар, қазахстанские интернет олимпиады, кио, cdo kz, оқушыларға арналған интернет олимпиада, қашықтық олимпиада, тегін олипиадалар, клевер олимпиада'
-                }, ],
                 link: [{
                     rel: 'canonical',
                     href: this.$store.state.appUrl + this.$route.path
@@ -256,7 +247,7 @@
                 startDate: data.startDate,
                 endDate: data.endDate,
                 header: [{
-                    name: 'Олимпиадалар',
+                    name: 'Есептер ',
                     link: '/olimpiada'
                 }, {
                     name: data.bagyt.o_bagyty,
@@ -298,7 +289,7 @@
             startTest(index) {
                 var code = this.o_users[index].obwcode
                     this.$router.push({
-                        name: 'olimpiada-test-erezhe',
+                        name: 'olimpiada-test',
                         query: {
                             code: code
                         },

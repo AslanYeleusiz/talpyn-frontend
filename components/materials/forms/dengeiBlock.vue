@@ -3,15 +3,8 @@
         <div class="left">
             <div class="wrap">
                 <div>
-                    <div class="head">{{getType(type)}} атауы:</div>
+                    <div class="head">Есеп жинақ атауы:</div>
                     <div class="title">{{name}}</div>
-                </div>
-            </div>
-            <hr>
-            <div class="wrap">
-                <div>
-                    <div class="head">Қатысушы:</div>
-                    <div class="title">{{qatysushy}}</div>
                 </div>
             </div>
         </div>
