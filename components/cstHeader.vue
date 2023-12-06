@@ -7,7 +7,7 @@
             <template v-if="$auth.user">
                 <div class="d-f a-c navs mob">
                     <nuxt-link to="/">Басты бет</nuxt-link>
-                    <nuxt-link to="/olimpiada">Есептер</nuxt-link>
+                    <nuxt-link to="/olimpiada">Олимпиада</nuxt-link>
                     <nuxt-link to="/about">Біз жайлы</nuxt-link>
                 </div>
                 <div class="auth">
@@ -27,7 +27,7 @@
                             </b-dropdown-item>
                             <b-dropdown-item to="/olimpiada">
                                 <div class="d-f a-c gap-10">
-                                    <img src="~assets/images/svg/menu_nt.svg" alt="">Есептер
+                                    <img src="~assets/images/svg/menu_nt.svg" alt="">Олимпиада
                                 </div>
                             </b-dropdown-item>
                             <b-dropdown-item to="/about">
@@ -47,7 +47,7 @@
             <template v-else>
                 <div class="d-f a-c navs">
                     <nuxt-link to="/">Басты бет</nuxt-link>
-                    <nuxt-link to="/olimpiada">Есептер</nuxt-link>
+                    <nuxt-link to="/olimpiada">Олимпиада</nuxt-link>
                     <nuxt-link to="/about">Біз жайлы</nuxt-link>
                     <nuxt-link class="cst_m" to="/login">
                         <cstBtn class="cst_btn" text="Кіру/тіркелу"></cstBtn>

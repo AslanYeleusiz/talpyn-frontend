@@ -143,6 +143,12 @@
         
         methods: {
             startTimer() {
+                this.$axios.$post('olimpiada/test/start', {
+                    o_order_id: this.katysushy.o_order_id,
+                    suraktar: this.suraktar,
+                }).then((res)=>{
+                    console.log('success saved')
+                })
                 this.timer = setInterval(() => {
                     this.cT.currentTime--;
                     let s = this.cT.currentTime;
@@ -473,7 +479,7 @@
                 overflow: hidden;
             }
             iframe {
-                transform: translate(-54px, -139px);
+                transform: translate(-54px, -100px);
                 height: 600px;
             }
 

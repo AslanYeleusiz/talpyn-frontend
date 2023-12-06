@@ -68,8 +68,8 @@ export default {
   ],
 
     axios: {
-//        baseURL: 'http://127.0.0.1:8000/api',
-                baseURL: 'https://api.talpyn-edu.kz/api',
+        baseURL: 'http://127.0.0.1:8000/api',
+        //        baseURL: 'http://ust-backend/api',
         retry: true,
     },
 

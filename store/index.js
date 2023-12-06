@@ -1,6 +1,6 @@
 export const state = () => ({
-  apiUrl: 'https://api.talpyn-edu.kz',
-  appUrl: 'https://talpyn-edu.kz',
+  apiUrl: 'http://127.0.0.1:8000',
+  appUrl: 'http://localhost:3000',
   material: [
         [
             'Ұстаздарға материалдар, ашық сабақтар, сабақ жоспарлары',
