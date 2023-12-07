@@ -31,7 +31,7 @@
                             <div class="question-title" v-html="suraktar[currentQuestion].surak"></div>
                             <div class="answers">
                                 <label v-for="(zhauap, index) in suraktar[currentQuestion].zhauap" class="answer">
-                                    <input v-model="suraktar[currentQuestion].my_answer" :value="zhauap.id" type="radio"> <span v-html="zhauap.variant"></span>
+                                    <input v-model="suraktar[currentQuestion].my_answer" :value="zhauap.id" type="radio"> <div class="span" v-html="zhauap.variant"></div>
                                 </label>
                             </div>
                         </div>
@@ -414,13 +414,13 @@
                     z-index: -1;
                 }
 
-                span {
+                .span {
                     display: inline-flex;
                     align-items: center;
                     user-select: none;
                 }
 
-                span::before {
+                .span::before {
                     content: '';
                     display: inline-block;
                     position: relative;
@@ -436,7 +436,7 @@
                     border-radius: 50%;
                 }
 
-                input:checked+span::before {
+                input:checked+.span::before {
                     background-image: url(~/assets/images/nike.svg);
                     background-color: #1E63E9;
                 }
