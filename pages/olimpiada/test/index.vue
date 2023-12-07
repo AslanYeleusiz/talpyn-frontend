@@ -105,7 +105,7 @@
         async asyncData({$axios, redirect, query}){
             let res = await $axios.$get('/olimpiada/test/load', {
                     params: {
-                        code: query.code
+                        code: query.code,
                     }
                 })
             var timer = 3600
@@ -143,12 +143,6 @@
         
         methods: {
             startTimer() {
-                this.$axios.$post('olimpiada/test/start', {
-                    o_order_id: this.katysushy.o_order_id,
-                    suraktar: this.suraktar,
-                }).then((res)=>{
-                    console.log('success saved')
-                })
                 this.timer = setInterval(() => {
                     this.cT.currentTime--;
                     let s = this.cT.currentTime;
@@ -237,6 +231,14 @@
         mounted() {
             this.stopTimer()
             this.startTimer()
+        },
+        created(){
+            this.$axios.$post('olimpiada/test/start', {
+                o_order_id: this.katysushy.o_order_id,
+                suraktar: this.suraktar,
+            }).then((res)=>{
+                console.log('success saved')
+            })
         }
 
     }
