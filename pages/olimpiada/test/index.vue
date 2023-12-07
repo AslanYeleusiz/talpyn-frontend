@@ -415,8 +415,6 @@
                 }
 
                 .span {
-                    display: inline-flex;
-                    align-items: center;
                     user-select: none;
                 }
 

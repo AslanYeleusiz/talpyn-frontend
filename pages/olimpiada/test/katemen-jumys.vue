@@ -36,7 +36,7 @@
                         <div class="answers">
                             <template v-for="zhauap in suraktar[currentQuestion].surak.zhauap">
                                 <label class="answer" :class="checThisAnswer(zhauap)">
-                                    <input type="radio"><span v-html="zhauap.variant"></span>
+                                    <input type="radio"><div class="span" v-html="zhauap.variant"></div>
                                 </label>
                             </template>
                         </div>
@@ -339,13 +339,11 @@
                     z-index: -1;
                 }
 
-                span {
-                    display: inline-flex;
-                    align-items: center;
+                .span {
                     user-select: none;
                 }
 
-                span::before {
+                .span::before {
                     content: '';
                     display: inline-block;
                     position: relative;
@@ -362,7 +360,7 @@
                 }
 
                 &.success{
-                    span::before{
+                    .span::before{
                         background-image: url(~/assets/images/krestSuccess.svg);
                         background-color: rgba(3, 177, 19, 0.4);
                         border: 1px solid #03B113;
@@ -371,7 +369,7 @@
                 }
 
                 &.error {
-                    span::before{
+                    .span::before{
                         background-image: url(~/assets/images/krest.svg);
                         background-color: rgba(255, 0, 0, 0.4);
                         border: 1px solid #FF0000;
