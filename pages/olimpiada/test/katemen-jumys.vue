@@ -36,7 +36,7 @@
                         <div class="answers">
                             <template v-for="zhauap in suraktar[currentQuestion].surak.zhauap">
                                 <label class="answer" :class="checThisAnswer(zhauap)">
-                                    <input type="radio"><span>{{zhauap.variant}}</span>
+                                    <input type="radio"><span v-html="zhauap.variant"></span>
                                 </label>
                             </template>
                         </div>

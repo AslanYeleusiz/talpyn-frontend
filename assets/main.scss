@@ -15,7 +15,9 @@
     align-items: center;
     justify-content: center;
 }
-
+b, strong {
+    font-weight: 600;
+}
 .j-b {
     justify-content: space-between;
 }

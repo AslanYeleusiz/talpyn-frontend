@@ -3,6 +3,18 @@
         <videoPopup :isOpen="videoOpen" :youtube="youtubeLink" @closePopup="videoOpen=0" />
         <div class="olimp">
             <div class="body">
+               <div class="cat-overflow">
+                    <div class="cst-ct">
+                        <div class="cat-category">
+                            <button class="btn cat-item" :class="{active: cat_category==1}" @click="changeCatType(1)">
+                                Олимпиада
+                            </button>
+                            <button class="btn cat-item" :class="{active: cat_category==2}" @click="changeCatType(2)">
+                                Есептер
+                            </button>
+                        </div>
+                    </div>
+                </div>
                 <div class="list">
                     <div class="cst-ct">
                         <div class="wrapper">
@@ -210,8 +222,6 @@
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr 1fr;
                 grid-gap: 1px;
-                background-color: #D6D6D6;
-                background-image: linear-gradient(0deg, #D6D6D6 60%, #F9F9F9 40%);
                 background-size: 40px 45px;
                 border-bottom: 1px solid #D6D6D6;
 

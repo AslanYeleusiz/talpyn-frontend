@@ -42,9 +42,11 @@
                                 <button @click="nextTo" class="btn paginate-btn right"></button>
                             </div>
                         </div>
+<!--
                         <div class="framer">
                             <iframe class="w-100" src="https://www.programiz.com/python-programming/online-compiler/" frameborder="0"></iframe>
                         </div>
+-->
                     </div>
                 </div>
             </div>
