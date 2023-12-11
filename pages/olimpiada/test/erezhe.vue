@@ -13,8 +13,8 @@
                     <div class="informer">
                         <img src="~assets/images/kubok2.png" alt="">
                         <div>
-                            <div class="h">Олимпиада тестілеу форматында өтеді. Тест 20 сұрақтан тұрады.</div>
-                            <div class="desc">Сұрақтардың дұрыс немесе қате екендігін, яғни олимпиада нәтижесін тестті аяқтағаннан кейін қарап тексеруге болады.</div>
+                            <div class="h">Олимпиада тестілеу форматында өтеді. Тест {{suraktar.length}} есептен тұрады.</div>
+                            <div class="desc">Есептердің дұрыс немесе қате екендігін, яғни олимпиада нәтижесін тестті аяқтағаннан кейін қарап тексеруге болады.</div>
                             <div class="warning">
 <!--                                <Lottie class="warn" :options="defaultOptions" v-on:animCreated="handleAnimation" />-->
                                 <div class="inBody">
@@ -22,7 +22,7 @@
                                     Тесттен өтуге <span class="greentt">60 минут</span> беріледі
                                 </div>
                             </div>
-                            <div class="desc">Тест сұрағын зейінмен оқып, дұрыс жауапты таңдаңыз!</div>
+                            <div class="desc">Тест есебін зейінмен оқып, дұрыс жауапты таңдаңыз!</div>
                         </div>
                     </div>
                 </div>

@@ -31,10 +31,21 @@
                             <div class="question-title" v-html="suraktar[currentQuestion].surak"></div>
                             <div class="answers">
                                 <label v-for="(zhauap, index) in suraktar[currentQuestion].zhauap" class="answer">
-                                    <input v-model="suraktar[currentQuestion].my_answer" :value="zhauap.id" type="radio"> <div class="span" v-html="zhauap.variant"></div>
+                                    <input v-model="suraktar[currentQuestion].my_answer" :value="zhauap.id" type="radio"> <span v-html="zhauap.variant"></span>
                                 </label>
                             </div>
                         </div>
+                        <div class="framer">
+                            <iframe class="w-100" src="https://www.programiz.com/python-programming/online-compiler/" frameborder="0"></iframe>
+                        </div>
+                        <div v-if="!tusinik" class="tusinik cursor" @click="tusinik=1">
+                            <b >Шешімін көрсету</b>
+                        </div>
+                        <div v-else class="tusinik">
+                            <b>Шешімі:</b>
+                            <span>{{suraktar[currentQuestion].tusinik}}</span>
+                        </div>
+                        
                         <div class="pagination">
                             <div class="paginate">
                                 <button @click="prevTo" class="btn paginate-btn left"></button>
@@ -42,9 +53,7 @@
                                 <button @click="nextTo" class="btn paginate-btn right"></button>
                             </div>
                         </div>
-                        <div class="framer">
-                            <iframe class="w-100" src="https://www.programiz.com/python-programming/online-compiler/" frameborder="0"></iframe>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -88,6 +97,7 @@
                     my_answer: null,
                 },
                 appeals_active: 0,
+                tusinik: 0,
                 timer: null,
                 suraktar: [{
                     my_answer: 0,
@@ -105,7 +115,7 @@
         async asyncData({$axios, redirect, query}){
             let res = await $axios.$get('/olimpiada/test/load', {
                     params: {
-                        code: query.code,
+                        code: query.code
                     }
                 })
             var timer = 3600
@@ -158,19 +168,26 @@
                 if (this.suraktar[this.currentQuestion].my_answer != 0) {
                     this.sendToSaveAnswer(this.currentQuestion)
                 }
-                this.sendTestResult()
+                if (this.checEnterAllVariants()) {
+                    this.sendTestResult()
+                } else {
+                    this.confirmToContinueTest()
+                }
             },
             sendTestResult() {
                 this.stopTimer()
                 this.$api.$post('olimpiada/test/finish', {
                     id: this.katysushy.idd
                 }).then((res) => {
-                    this.$router.push({
-                        name: 'olimpiada-test-id-result',
-                        params: {
-                            id: this.katysushy.idd,
-                        }
-                    })
+                    this.$bus.$emit('successPopup');
+                    setTimeout(() => {
+                        this.$router.push({
+                            name: 'olimpiada-test-id-result',
+                            params: {
+                                id: this.katysushy.idd,
+                            }
+                        })
+                    }, 1500)
                 })
             },
             sendAppeals(variable, text) {
@@ -199,6 +216,19 @@
                     if (e.my_answer == 0) count = false
                 })
                 return count
+            },
+            confirmToContinueTest() {
+                this.$dialog.open({
+                    message: 'Кейбір сұрақтарға жауап берілмеді. Тестті аяқтауды растайсыз ба?',
+                    resolver: (async (result) => {
+                        try {
+                            const res = await result;
+                            this.sendTestResult()
+                        } catch (error) {
+                            console.warn(error);
+                        }
+                    }),
+                });
             },
             nextTo() {
                 if (this.suraktar[this.currentQuestion].my_answer != 0) {
@@ -231,14 +261,6 @@
         mounted() {
             this.stopTimer()
             this.startTimer()
-        },
-        created(){
-            this.$axios.$post('olimpiada/test/start', {
-                o_order_id: this.katysushy.o_order_id,
-                suraktar: this.suraktar,
-            }).then((res)=>{
-                console.log('success saved')
-            })
         }
 
     }
@@ -316,7 +338,6 @@
             box-shadow: 0px 4px 54px rgba(0, 0, 0, 0.05);
             border-radius: 10px;
             padding: 40px 40px 0;
-            overflow-y: scroll;
 
             &::-webkit-scrollbar {
                 width: 0px;
@@ -416,11 +437,13 @@
                     z-index: -1;
                 }
 
-                .span {
+                span {
+                    display: inline-flex;
+                    align-items: center;
                     user-select: none;
                 }
 
-                .span::before {
+                span::before {
                     content: '';
                     display: inline-block;
                     position: relative;
@@ -436,7 +459,7 @@
                     border-radius: 50%;
                 }
 
-                input:checked+.span::before {
+                input:checked+span::before {
                     background-image: url(~/assets/images/nike.svg);
                     background-color: #1E63E9;
                 }
@@ -482,6 +505,17 @@
                 transform: translate(-54px, -100px);
                 height: 600px;
             }
+            
+            .tusinik {
+                &.cursor {
+                cursor: pointer;
+                    
+                }
+                font-size: 18px;
+                line-height: 24px;
+                padding-bottom: 20px;
+            }
+            
 
 
         }

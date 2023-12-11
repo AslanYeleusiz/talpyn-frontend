@@ -16,7 +16,7 @@
                 <div v-else class="header">
                     {{bagyt.o_bagyty}}
                 </div>
-                <dengeiBlock :month="getMonth(bagyt.month)" :name="bagyt.bagyt" :qatysushy="get_qatysushi_text()" :lastDayInMonth="bagyt.lastDayInMonth" type=1 />
+                <dengeiBlock :month="getMonth(bagyt.month)" :name="bagyt.bagyt" :qatysushy="get_qatysushi_text()" :price="oplataSell" :lastDayInMonth="bagyt.lastDayInMonth" type=1 />
                 <div class="userBlock">
                     <div class="prev">Қатысушылар</div>
                     <div class="users">
@@ -68,6 +68,9 @@
                                     <div v-if="o_user.o_mekeme" class="work">{{o_user.o_mekeme}}</div>
                                     <div v-if="o_user.o_zhetekshi" class="work m-0">Жетекші: {{o_user.o_zhetekshi.name}}</div>
                                     <div v-if="o_user.bari_tapsirdy" class="wrap-go">
+                                        <editBtn @click.native="getCertificate(o_user.idd)" :text="certCalc(o_user.o_tizim.result)+' жүктеу'" img='3' />
+                                        <editBtn v-if="checStudent(index) && o_user.o_zhetekshi_id" @click.native="getAlgys(0, index)" text="Жетекші алғыс хатын жүктеу" img='3' />
+                                        <editBtn v-if="o_user.o_katysushy_idd == 3" @click.native="getAlgys(1, index)" text="Ата-ана алғыс хатын жүктеу" img='3' />
                                         <editBtn @click.native="openPopup(index)" text="Нәтижесі" img='4' />
                                     </div>
                                     <div v-else class="wrap-edit">
@@ -75,10 +78,13 @@
                                             <editBtn v-if="o_user.update_count>0" @click.native="userEdit=index" text="Өзгерту" img='1' />
                                             <editBtn v-if="!o_user.success" @click.native="confirmDeleteUser(index)" text="Жою" img='2' />
                                         </div>
+                                        <div class="code">
+                                            Қатысу коды:<br><b>{{o_user.obwcode}}</b>
+                                        </div>
                                         <div class="cst_size_btn">
                                             <cstBtn v-if="o_user.loading" loading=1 radian=1 />
                                             <cstBtn v-else-if="o_user.success" @click.native="startTest(index)" text="Тест тапсыру" radian=1 />
-                                            <cstBtn v-else @click.native="olimpTolem(index)" text="Тест дайындау" radian=1 />
+                                            <cstBtn v-else @click.native="olimpTolem(index)" text="Дайынмын" radian=1 />
                                         </div>
                                     </div>
                                     <div class="numeric">
@@ -122,6 +128,9 @@
                         <div v-else-if="!startDate" class="addNewUser">
                             <div class="cst_size_btn">
                                 <cstBtn @click.native="addNewUser=1" text="Қосу" radian=1 img="add.svg" />
+                            </div>
+                            <div class="info">
+                                Бірнеше қатысушыны қосуға болады
                             </div>
                         </div>
                     </div>
@@ -191,6 +200,8 @@
                 videoOpen: 0,
                 youtubeLink: 'https://www.youtube.com/watch?v=Ka0lRluiGmk',
                 addNewUser: 0,
+                oplataPopup: 0,
+                oplataIndex: 1,
                 newUserName: '',
                 newUserFname: '',
                 newUserWorkCheck: 0,
@@ -253,6 +264,7 @@
                 newUserNomer: data.o_users.length + 1,
                 classes: classes,
                 o_user: user,
+                oplataSell: data.bagyt.is_free == 1 ? 0 : data.bagyt_price,
                 startDate: data.startDate,
                 endDate: data.endDate,
                 header: [{
@@ -298,7 +310,7 @@
             startTest(index) {
                 var code = this.o_users[index].obwcode
                     this.$router.push({
-                        name: 'olimpiada-test',
+                        name: 'olimpiada-test-erezhe',
                         query: {
                             code: code
                         },
@@ -415,19 +427,18 @@
             },
             olimpTolem(index) {
                 this.o_users[index].loading = 1
+                this.oplataPopup = 6
+                this.oplataIndex = index
                 this.$api.post('/olimpiada/test/tolem-zhasau', {
                     id: this.o_users[index].idd,
                     nomer: index + 1,
-                    price: 0,
+                    price: this.oplataSell,
                 }).then((res) => {
                     this.o_users[index].loading = 0
                     if (res.data.success == true) {
                         this.o_users[index].success = 1
                         this.o_users[index].o_tizim = res.data.o_tizim
-                        this.setNotification('Төлем жасалынды', 'success')
-                        this.setNotification(res.data.price + ' тг сіздің бонустың шотыңызға аударылды')
                     }
-                    console.log(this.o_users)
                 }).catch((err) => {
                     this.o_users[index].loading = 0
                     console.log(err);
@@ -572,10 +583,6 @@
                 })
             },
         },
-        mounted() {
-            var q = this.$route.query.buy
-            if (q) this.olimpTolem(q)
-        },
     }
 
 </script>
@@ -616,6 +623,7 @@
     }
 
     .userBlock {
+        background: #F8F8F8;
         border-radius: 10px;
         padding: 30px 30px 50px;
         margin-top: 30px;
@@ -713,21 +721,31 @@
                         position: absolute;
                         top: 0;
                         left: 0;
-                        border: 1px solid #1E63E9;
-                        color: #1E63E9;
-                        border-radius: 50%;
-                        width: 30px;
-                        height: 30px;
+                        background: #9F9F9F;
+                        border-radius: 4px;
+                        width: 45px;
+                        height: 45px;
                         display: flex;
                         align-items: center;
                         justify-content: center;
                         z-index: 1;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            width: 65px;
+                            height: 65px;
+                            background: #ffffff;
+                            transform: rotate(45deg) translate(36px, 1px);
+                            z-index: 3;
+                        }
+
                         .num {
-                            transform: translateY(-2px);
+                            transform: translate(-8px, -8px);
                             font-size: 16px;
                             font-weight: 800;
                             line-height: 19px;
-                            
+                            color: #FFFFFF;
                         }
                     }
 
