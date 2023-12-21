@@ -24,7 +24,7 @@
                         </div>
                         <div class="list_item">
                             <img src="~assets/images/turnir_Star.svg" alt="">
-                            <span class="light">Жинаған балыңыз: </span><span>20/{{o_katysushy.o_tizim.result}} балл</span>
+                            <span class="light">Жинаған балыңыз: </span><span>6/{{o_katysushy.o_tizim.result}} балл</span>
                         </div>
                         <div class="list_item">
                             <img src="~assets/images/turnir_Calendar.svg" alt="">

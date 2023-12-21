@@ -7,7 +7,6 @@
                     <exitBtn @click.native="cancel" />
                 </div>
                 <div class="body">
-                    <Lottie :width="100" :height="100" :options="defaultOptions" v-on:animCreated="handleAnimation" />
                     <div class="h">{{ message }}</div>
                 </div>
                 <div class="foot">
@@ -23,14 +22,11 @@
 
 
 <script>
-    import Lottie from 'vue-lottie/src/lottie.vue'
-    import * as animationData from "@/assets/lottie_files/info_2/animation_kqc42oh6.json"
     import saveBtn from '@/components/forms/saveBtn.vue'
     import exitBtn from '@/components/forms/exitBtn.vue'
 
     export default {
         components: {
-            Lottie,
             saveBtn,
             exitBtn
         },
@@ -38,11 +34,6 @@
             return {
                 open: false,
                 Animate: false,
-                defaultOptions: {
-                    animationData: animationData,
-                    loop: true,
-                },
-                animationSpeed: 1,
                 message: '',
                 resolver: () => null,
             }
@@ -51,9 +42,6 @@
             this.$nuxt.$on('dialog', this.dialog);
         },
         methods: {
-            handleAnimation: function(anim) {
-                this.anim = anim;
-            },
             confirm() {
                 this.resolver(new Promise((resolve) => resolve('confirmed')));
                 this.close();

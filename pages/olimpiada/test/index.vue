@@ -43,7 +43,7 @@
                         </div>
                         <div v-else class="tusinik">
                             <b>Шешімі:</b>
-                            <span>{{suraktar[currentQuestion].tusinik}}</span>
+                            <span v-html="suraktar[currentQuestion].tusinik"></span>
                         </div>
                         
                         <div class="pagination">
@@ -231,18 +231,21 @@
                 });
             },
             nextTo() {
+                this.tusinik = 0
                 if (this.suraktar[this.currentQuestion].my_answer != 0) {
                     this.sendToSaveAnswer(this.currentQuestion)
                 }
                 if (this.currentQuestion < 19) this.currentQuestion++
             },
             prevTo() {
+                this.tusinik = 0
                 if (this.suraktar[this.currentQuestion].my_answer != 0) {
                     this.sendToSaveAnswer(this.currentQuestion)
                 }
                 if (this.currentQuestion > 0) this.currentQuestion--
             },
             setQuestion(e) {
+                this.tusinik = 0
                 if (this.suraktar[this.currentQuestion].my_answer != 0) {
                     this.sendToSaveAnswer(this.currentQuestion)
                 }

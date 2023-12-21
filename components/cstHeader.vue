@@ -8,7 +8,7 @@
                 <div class="d-f a-c navs mob">
                     <nuxt-link to="/">Басты бет</nuxt-link>
                     <nuxt-link to="/olimpiada">Олимпиада</nuxt-link>
-                    <nuxt-link to="/about">Біз жайлы</nuxt-link>
+                    <nuxt-link to="/materials">Кітапхана</nuxt-link>
                 </div>
                 <div class="auth">
                     <b-dropdown id="dropdown-1" variant="link" toggle-class="text-decoration-none" ref="dropdown" right no-caret>
@@ -30,9 +30,9 @@
                                     <img src="~assets/images/svg/menu_nt.svg" alt="">Олимпиада
                                 </div>
                             </b-dropdown-item>
-                            <b-dropdown-item to="/about">
+                            <b-dropdown-item to="/materials">
                                 <div class="d-f a-c gap-10">
-                                    <img src="~assets/images/svg/menu_sub.svg" alt="">Біз жайлы
+                                    <img src="~assets/images/svg/menu_sub.svg" alt="">Кітапхана
                                 </div>
                             </b-dropdown-item>
                             <b-dropdown-item @click="logout">
@@ -48,7 +48,7 @@
                 <div class="d-f a-c navs">
                     <nuxt-link to="/">Басты бет</nuxt-link>
                     <nuxt-link to="/olimpiada">Олимпиада</nuxt-link>
-                    <nuxt-link to="/about">Біз жайлы</nuxt-link>
+                    <nuxt-link to="/materials">Кітапхана</nuxt-link>
                     <nuxt-link class="cst_m" to="/login">
                         <cstBtn class="cst_btn" text="Кіру/тіркелу"></cstBtn>
                     </nuxt-link>
