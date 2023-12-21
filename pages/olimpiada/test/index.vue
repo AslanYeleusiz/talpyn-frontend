@@ -49,7 +49,7 @@
                         <div class="pagination">
                             <div class="paginate">
                                 <button @click="prevTo" class="btn paginate-btn left"></button>
-                                <div class="str">{{currentQuestion+1}} / 20</div>
+                                <div class="str">{{currentQuestion+1}} / 6</div>
                                 <button @click="nextTo" class="btn paginate-btn right"></button>
                             </div>
                         </div>

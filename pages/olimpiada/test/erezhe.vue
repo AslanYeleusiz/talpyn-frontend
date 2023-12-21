@@ -13,7 +13,7 @@
                     <div class="informer">
                         <img src="~assets/images/kubok2.png" alt="">
                         <div>
-                            <div class="h">Олимпиада тестілеу форматында өтеді. Тест {{suraktar.length}} есептен тұрады.</div>
+                            <div class="h">Олимпиада тестілеу форматында өтеді. Тест {{suraktar.length}} есептен тұрады. Бастапқы 3 есеп жеңіл қиындықты деңгейде, одан кейінгі 2 есеп орташа қиындықты деңгейде, соңғы 1 есеп ең қиындықты деңгейде.</div>
                             <div class="desc">Есептердің дұрыс немесе қате екендігін, яғни олимпиада нәтижесін тестті аяқтағаннан кейін қарап тексеруге болады.</div>
                             <div class="warning">
 <!--                                <Lottie class="warn" :options="defaultOptions" v-on:animCreated="handleAnimation" />-->
