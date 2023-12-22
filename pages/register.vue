@@ -62,13 +62,13 @@
                 this.$auth.options.redirect = false
                 this.$auth.loginWith('laravelJWT', {
                     data: {
-                        tel_num: this.form.tel_num,
+                        phone: this.form.tel_num,
                         password: this.form.password
                     }
                 }).then((res) => {
                     this.errors.sendSms = null
                     localStorage.setItem('access_token', res.data.access_token);
-                    window.location.reload();
+                    this.$router.push('/')
                 }).catch((error) => {
                     const data = error.response.data.errors;
                     for (let [key, value] of Object.entries(this.errors)) {
